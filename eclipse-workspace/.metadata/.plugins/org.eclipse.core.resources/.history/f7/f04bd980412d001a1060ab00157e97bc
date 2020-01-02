@@ -1,0 +1,88 @@
+package PackageDemo;
+
+
+import java.time.LocalDateTime;;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.util.GenericOptionsParser;
+
+enum stat{
+	LoggedIn,LoggedOut
+}
+
+public class Logger {
+	public static void main(String[] args) throws Exception {
+		
+		Configuration c = new Configuration();
+		String[] files = new GenericOptionsParser(c, args).getRemainingArgs();
+		Path input = new Path(files[0]);
+		Path output = new Path(files[1]);
+		Job j = new Job(c, "Logger");
+		j.setJarByClass(Logger.class);
+		j.setMapperClass(MapForLogger.class);
+		j.setReducerClass(ReduceForLogger.class);
+		j.setOutputKeyClass(Text.class);
+		j.setOutputValueClass(IntWritable.class);
+		FileInputFormat.addInputPath(j, input);
+		FileOutputFormat.setOutputPath(j, output);
+		System.exit(j.waitForCompletion(true) ? 0 : 1);
+	}
+
+	public class ipData{
+		public String ip;
+		public stat status=stat.LoggedOut;
+		public LocalDateTime stamp;
+	}
+
+	public class MapForLogger extends Mapper<LongWritable, Text, Text, IntWritable> {
+		ArrayList<ipData> ipList= new ArrayList<ipData>(0);
+
+		public void map(LongWritable key, Text value, Context con) throws IOException, InterruptedException {
+			String line = value.toString();
+			String[] words = line.split(",");
+			boolean flag=false;
+			for(int i=0 ; i<ipList.size() ; i++) {
+				if(ipList.get(i).ip.equals(words[0])) {
+					flag=true;
+					
+				}
+			}
+			if(flag==false) {
+				ipData temp = new ipData();
+				temp.ip = words[0];
+				String[] time = words[1].split(":");
+				String[] date = time[0].split("/");
+				date[0] = date[0].replace(";","");
+				LocalDateTime temptime;
+				CharSequence parser = date[2]+"-"+;
+				temptime.parse("2015-02-20T06:30:00")
+				temp
+				ipList.add(temp);
+			}
+			int inputTime = Integer.parseInt(words[1].trim());
+			Text outputKey = new Text(words[0].toUpperCase().trim());
+			IntWritable outputValue = new IntWritable(inputTime);
+			con.write(outputKey, outputValue);
+		}
+	}
+
+	public class ReduceForLogger extends Reducer<Text, IntWritable, Text, IntWritable> {
+		public void reduce(Text word, Iterable<IntWritable> values, Context con) throws IOException, InterruptedException {
+			int sum = 0;
+			for (IntWritable value : values)
+				sum += value.get();
+			con.write(word, new IntWritable(sum));
+		}
+	}
+}
