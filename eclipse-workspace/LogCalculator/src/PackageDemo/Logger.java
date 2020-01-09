@@ -47,7 +47,7 @@ public class Logger {
 	
 	
 
-	public class MapForLogger extends Mapper<LongWritable, Text, Text, IntWritable> {
+	public static class MapForLogger extends Mapper<LongWritable, Text, Text, IntWritable> {
 		ArrayList<ipData> ipList= new ArrayList<ipData>(0);
 
 		public void map(LongWritable key, Text value, Context con) throws IOException, InterruptedException {
@@ -67,10 +67,10 @@ public class Logger {
 				String[] date = time[0].split("/");
 				date[0] = date[0].replace(";","");
 				LocalDateTime temptime;
-				CharSequence parser = date[2]+"-"+date[2]+"-"+;
-				temptime.parse("2015-02-20T06:30:00");
-				temp
-				ipList.add(temp);
+//				CharSequence parser = date[2]+"-"+date[2]+"-"+;
+//				temptime.parse("2015-02-20T06:30:00");
+//				temp
+//				ipList.add(temp);
 			}
 			int inputTime = Integer.parseInt(words[1].trim());
 			Text outputKey = new Text(words[0].toUpperCase().trim());
@@ -79,7 +79,7 @@ public class Logger {
 		}
 	}
 
-	public class ReduceForLogger extends Reducer<Text, IntWritable, Text, IntWritable> {
+	public static class ReduceForLogger extends Reducer<Text, IntWritable, Text, IntWritable> {
 		public void reduce(Text word, Iterable<IntWritable> values, Context con) throws IOException, InterruptedException {
 			int sum = 0;
 			for (IntWritable value : values)
