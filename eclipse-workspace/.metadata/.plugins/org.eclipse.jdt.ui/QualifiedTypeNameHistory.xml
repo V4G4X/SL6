@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.apache.hadoop.io.nativeio.NativeIO.Stat"/>
-    <fullyQualifiedTypeName name="org.apache.hadoop.http.lib.StaticUserWebFilter.StaticUserFilter"/>
-    <fullyQualifiedTypeName name="PackageDemo.MapForLogger"/>
-    <fullyQualifiedTypeName name="PackageDemo.Logger.ipData"/>
-    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="java.lang.CharSequence"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="org.apache.hadoop.io.Text"/>
-    <fullyQualifiedTypeName name="java.lang.InternalError"/>
-    <fullyQualifiedTypeName name="PackageDemo.Logger"/>
-    <fullyQualifiedTypeName name="org.apache.hadoop.io.IntWritable"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="java.util.Deque"/>
-    <fullyQualifiedTypeName name="PackageDemo.stat"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.nativeio.NativeIO.Stat"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.http.lib.StaticUserWebFilter.StaticUserFilter"/>
+<fullyQualifiedTypeName name="PackageDemo.MapForLogger"/>
+<fullyQualifiedTypeName name="PackageDemo.Logger.ipData"/>
+<fullyQualifiedTypeName name="java.lang.StrictMath"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+<fullyQualifiedTypeName name="java.lang.CharSequence"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.Text"/>
+<fullyQualifiedTypeName name="java.lang.InternalError"/>
+<fullyQualifiedTypeName name="PackageDemo.Logger"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.IntWritable"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Deque"/>
+<fullyQualifiedTypeName name="PackageDemo.stat"/>
 </qualifiedTypeNameHistroy>
