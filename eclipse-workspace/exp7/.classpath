@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/hduser/33117/SL6/eclipse-workspace/Library Jars/org.apache.commons.cli-1.2.0.jar.zip"/>
+	<classpathentry kind="lib" path="/home/hduser/33117/SL6/eclipse-workspace/Library Jars/hadoop-core-1.1.2.jar.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
